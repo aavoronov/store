@@ -1,9 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
-import { Text, Image, TouchableOpacity, View, StyleSheet, Alert } from "react-native";
+import React from "react";
+import { Text, Image, View, Alert } from "react-native";
 import { ButtonCustom } from "../components/ButtonCustom";
 import { THEME } from "../theme";
-// import { DisplayReg } from "../components/ui/DisplayReg";
 
 export const ProductInner = (props) => {
   const navigation = useNavigation();
@@ -34,7 +33,6 @@ export const ProductInner = (props) => {
   return (
     <View
       style={{
-        ...styles.container,
         justifyContent: "flex-start",
         alignItems: "flex-start",
         marginBottom: 10,
@@ -44,7 +42,7 @@ export const ProductInner = (props) => {
       }}>
       <Image source={{ uri: props.image }} style={{ height: 350, width: 350, resizeMode: "contain", marginBottom: 10 }} />
       <Text style={{ fontSize: 24, lineHeight: 27, marginBottom: 10 }}>{props.title}</Text>
-      <Text style={{ ...styles.textGrey, fontSize: 14, marginBottom: 10 }}>{props.category}</Text>
+      <Text style={{ fontSize: 14, marginBottom: 10 }}>{props.category}</Text>
       <Text style={{ marginBottom: 10 }}>{props.description}</Text>
       <Text style={{ fontSize: 18, marginBottom: 10 }}>{props.price}</Text>
 
@@ -68,23 +66,3 @@ export const ProductInner = (props) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    //width: "32%",
-  },
-  textGreen: {
-    color: THEME.MAIN_GREEN,
-  },
-  textGrey: {
-    color: "#6F707A",
-  },
-  textPurple: {
-    color: THEME.PURPLE,
-  },
-  propertyContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-  },
-});

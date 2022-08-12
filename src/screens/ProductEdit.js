@@ -1,9 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { Text, Image, TouchableOpacity, View, StyleSheet, TextInput, Alert } from "react-native";
+import { View, StyleSheet, TextInput, Alert } from "react-native";
 import { ButtonCustom } from "../components/ButtonCustom";
 import { THEME } from "../theme";
-// import { DisplayReg } from "../components/ui/DisplayReg";
 
 export const ProductEdit = (props) => {
   const navigation = useNavigation();
@@ -57,7 +56,6 @@ export const ProductEdit = (props) => {
       {
         text: "OK",
         onPress: () => {
-          // console.log(payload);
           console.log("Сохранено");
           updateDatabaseEntry();
           // console.log(payload);
@@ -76,7 +74,6 @@ export const ProductEdit = (props) => {
         onPress: () => {
           console.log("Создано");
           createDatabaseEntry();
-          // console.log(payload);
         },
       },
     ]);
@@ -184,24 +181,6 @@ export const ProductEdit = (props) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    //width: "32%",
-  },
-  textGreen: {
-    color: THEME.MAIN_GREEN,
-  },
-  textGrey: {
-    color: "#6F707A",
-  },
-  textPurple: {
-    color: THEME.PURPLE,
-  },
-  propertyContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-  },
-
   field: {
     height: 50,
     backgroundColor: "#F1F4F7",

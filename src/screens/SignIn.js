@@ -1,13 +1,15 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
-import { Keyboard, Text, TouchableWithoutFeedback, View } from "react-native";
+import React, { useContext, useState } from "react";
+import { Keyboard, TouchableWithoutFeedback, View } from "react-native";
 import { stylesContainer } from "../../styles/container";
 import { AuthFieldset } from "../components/AuthFieldset";
 import { ButtonCustom } from "../components/ButtonCustom";
+import { AuthContext } from "../Context";
 import { THEME } from "../theme";
 
-export const SignIn = ({ token, setToken }) => {
+export const SignIn = () => {
   const navigation = useNavigation();
+  const [token, setToken] = useContext(AuthContext);
 
   const onSubmitHandler = () => {
     const payload = {
@@ -26,7 +28,7 @@ export const SignIn = ({ token, setToken }) => {
       .then((res) => res.json())
       .then((json) => {
         setToken(json.token);
-        console.log(json);
+        console.log(token);
       });
   };
 

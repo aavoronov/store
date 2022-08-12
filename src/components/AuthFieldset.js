@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity, Alert } from "react-native";
+import React from "react";
+import { StyleSheet, TextInput, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export const AuthFieldset = ({ setLogin, setPassword }) => {
